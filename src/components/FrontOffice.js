@@ -63,7 +63,7 @@ class FrontOffice extends Component {
             cancelPolicyName: '',
             createClaimName: '',
             createClaimAmount: 0.0,
-        })
+        });
     }
 
     processSubmit(option) {
@@ -81,9 +81,11 @@ class FrontOffice extends Component {
                 break;
             case CREATE_CLAIM:
                 // Validation skipped for simplicity
+                console.log('Creating Claim Name : ' + this.state.createClaimName);
+                console.log('Creating Claim Amount : ' + this.state.createClaimAmount);
                 if ('' !== this.state.createClaimName) {
                     this.props.createClaim(this.state.createClaimName, Number.parseFloat(this.state.createClaimAmount));
-                    this.setState({ createClaimName: '', createClaimAmount: 0.0 })
+                    this.setState({createClaimAmount: 0.0 })
                 }
                 break;
             default:
