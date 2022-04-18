@@ -1,5 +1,6 @@
 import './App.css';
 import  CompanyData from './components/CompanyData';
+import { CompDataFn } from './components/CompanyDataFn';
 import FrontOffice from './components/FrontOffice'
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
             <CompanyData />
           </div>
         </div>
+      </div>
+      <div className='m-4 p-4 bg-gray-200 border rounded'>
+        <h1 className='text-2xl'>State Displayed using Functional Component</h1>
+        <CompDataFn />
       </div>
     </div>
   );

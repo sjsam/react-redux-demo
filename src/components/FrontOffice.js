@@ -78,6 +78,9 @@ class FrontOffice extends Component {
             case CANCEL_POLICY:
                 // Validation skipped for simplicity
                 this.props.cancelPolicy(this.state.cancelPolicyName);
+                this.setState({
+                    cancelPolicyName: this.props.policies.length>0?this.props.policies[0]:'',
+                });
                 break;
             case CREATE_CLAIM:
                 // Validation skipped for simplicity
@@ -87,6 +90,10 @@ class FrontOffice extends Component {
                     this.props.createClaim(this.state.createClaimName, Number.parseFloat(this.state.createClaimAmount));
                     this.setState({createClaimAmount: 0.0 })
                 }
+                this.setState({
+                    createClaimName: this.props.policies.length>0?this.props.policies[0]:'',
+                    createClaimAmount: 0.0,
+                });
                 break;
             default:
                 break;
