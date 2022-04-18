@@ -11,8 +11,8 @@ class FrontOffice extends Component {
             displayOption: CREATE_POLICY,
             createPolicyAmount: 5000,
             createPolicyName: '',
-            cancelPolicyName: '',
-            createClaimName: '',
+            cancelPolicyName: this.props.policies.length>0?this.props.policies[0]:'',
+            createClaimName: this.props.policies.length>0?this.props.policies[0]:'',
             createClaimAmount: 0.0,
         };
         // Without bingig to this object we cannot call the below functions directly from onClick in 'Submit'
@@ -60,8 +60,8 @@ class FrontOffice extends Component {
             // We wish to clear all the form values too.
             createPolicyAmount: 5000,
             createPolicyName: '',
-            cancelPolicyName: '',
-            createClaimName: '',
+            cancelPolicyName: this.props.policies.length>0?this.props.policies[0]:'',
+            createClaimName: this.props.policies.length>0?this.props.policies[0]:'',
             createClaimAmount: 0.0,
         });
     }
